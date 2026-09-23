@@ -1,5 +1,6 @@
 # Contributors
 - Zachary Soriano
+- Mehla Abebe
 # hotel-package-tracker
 
 Mobile app for hotel front desk staff to log, track, and retrieve guest packages
@@ -7,4 +8,5 @@ Mobile app for hotel front desk staff to log, track, and retrieve guest packages
 Team Members
 
 Carissa Chen - Solution Framer
+Mehla Abebe- Front End and Experience 
 
