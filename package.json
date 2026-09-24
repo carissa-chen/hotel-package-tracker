@@ -1,19 +1,27 @@
 {
-  "name": "vite-project",
-  "private": true,
-  "version": "0.0.0",
+  "name": "hotel-package-tracker",
+  "version": "1.0.0",
+  "description": "Backend service for REQ-1 Package Logging",
+  "main": "server.js",
   "type": "module",
   "scripts": {
+    "start": "node server.js",
+    "test": "jest",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.3.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8"
   },
   "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^6.3.4",
     "@eslint/js": "^10.0.1",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.7",
