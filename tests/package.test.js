@@ -1,31 +1,29 @@
 const request = require('supertest');
-const mongoose = require('mongoose');
 const app = require('../app');
 const Package = require('../models/Package');
 
-// Connect to a local test database before tests run
-beforeAll(async () => {
-  const url = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/test_db';
-  await mongoose.connect(url).catch(() => {
-    // If MongoDB isn't running, mock the Mongoose save method for CI testing
-    jest.spyOn(Package.prototype, 'save').mockImplementation(function () {
-      return Promise.resolve(this);
-    });
-  });
-});
-
-// Clean up connections after all tests finish
-afterAll(async () => {
-  await mongoose.connection.close();
-});
+// Mock the Mongoose Package model to avoid live DB connections
+jest.mock('../models/Package');
 
 describe('REQ-1: Log Packages Endpoint', () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
   it('should create and save a new package record when given valid input', async () => {
     const payload = {
       trackingNumber: 'TRK987654321',
       recipientName: 'Jane Doe',
       carrier: 'FedEx'
     };
+
+    // Mock Package constructor and save method behavior
+    Package.prototype.save = jest.fn().mockResolvedValue({
+      _id: '6512a3b4c5d6e7f8a9b0c1d2',
+      ...payload,
+      status: 'Logged',
+      createdAt: new Date().toISOString()
+    });
 
     const res = await request(app)
       .post('/api/packages')
