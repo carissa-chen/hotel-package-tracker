@@ -1,6 +1,5 @@
-name: Node.js Automated Tests
+name: Node.js CI
 
-# Trigger the workflow on pushes or pull requests to main
 on:
   push:
     branches: [ main ]
@@ -11,21 +10,21 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
-    steps:
-    # Step 1: Check out repository code
-    - name: Check out repository
-      uses: actions/checkout@v4
+    # Tell GitHub Actions which folder contains package.json
+    defaults:
+      run:
+        working-directory: ./backend  # Change 'backend' to your folder name (e.g., server)
 
-    # Step 2: Set up Node.js environment
-    - name: Set up Node.js
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Use Node.js
       uses: actions/setup-node@v4
       with:
         node-version: '20'
 
-    # Step 3: Install project dependencies
     - name: Install dependencies
-      run: npm ci || npm install
+      run: npm install
 
-    # Step 4: Run the automated test suite
     - name: Run automated tests
       run: npm test
