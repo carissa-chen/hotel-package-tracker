@@ -1,12 +1,13 @@
 const express = require('express');
-const packagesRouter = require('./routes/packages');
-
+const cors = require('cors');
 const app = express();
 
-// Middleware to parse incoming JSON payloads
+// Enable CORS for front-end requests
+app.use(cors());
 app.use(express.json());
 
-// Register routes
-app.use(packagesRouter);
+// Routes
+const packageRoutes = require('./routes/packages');
+app.use('/api/packages', packageRoutes);
 
 module.exports = app;
