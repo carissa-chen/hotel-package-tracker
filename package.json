@@ -2,9 +2,9 @@
   "name": "hotel-package-tracker",
   "version": "1.0.0",
   "description": "Backend service for REQ-1 Package Logging",
-  "main": "routes/packages.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node routes/packages.js",
+    "start": "node server.js",
     "test": "jest"
   },
   "dependencies": {
