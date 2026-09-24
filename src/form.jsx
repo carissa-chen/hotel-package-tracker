@@ -5,12 +5,13 @@ function Form() {
     const formData = new FormData (event.currentTarget);
     const packageData = {
     recipientName: `${formData.get("firstName")} ${formData.get("lastName")}`,
-    trackingNumber: formData.get("trackingNo")
+    trackingNumber: formData.get("trackingNo"),
+    carrier: formData.get("carrier")
     };
     
     
     try { 
-    const response = await fetch("http://localhost:5000/api/packages", {
+    const response = await fetch("http://127.0.0.1:5000/api/packages", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -19,7 +20,10 @@ function Form() {
     });
 
     const result = await response.json();
+    alert("Package logged successfully!");
+    console.log(result);
 
+    
     } catch (error) {
       alert("Could not connect to the server.");
       console.error(error);
@@ -34,6 +38,7 @@ function Form() {
       <input name= "firstName" type="text" placeholder="FIRST NAME" required />
       <input name= "lastName" type="text" placeholder="LAST NAME" required />
       <input name= "trackingNo" type="text" placeholder="TRACKING NUMBER" required />
+      <input name= "carrier" type="text" placeholder="CARRIER" required />
 
       <button type="submit">Submit</button>
     </form>

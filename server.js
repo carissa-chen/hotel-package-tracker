@@ -1,8 +1,8 @@
 const app = require('./app');
 
-// Use the PORT provided by hosting services, or default to 5000 for local development
-const PORT = process.env.PORT || 5001;
+const PORT = process.env.PORT || 5000;
+const HOST = '0.0.0.0'; // Binds to all local network interfaces
 
-app.listen(PORT, () => {
-  console.log(`🚀 Hotel Package Tracker Server running on http://localhost:${PORT}`);
+app.listen(PORT, HOST, () => {
+  console.log('🚀 Server running on http://127.0.0.1:${PORT}');
 });
