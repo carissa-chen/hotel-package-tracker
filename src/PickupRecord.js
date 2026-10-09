@@ -1,16 +1,10 @@
 class PickupRecord {
   #signatureData;
   #pickupTime;
-  #status;
 
-  constructor(signatureData, pickupTime, status) {
+  constructor(signatureData, pickupTime) {
     this.#signatureData = signatureData;
     this.#pickupTime = pickupTime;
-    this.#status = status;
-  }
-
-  markAsRetrieved() {
-    // TODO: set the status to Retrieved
   }
 
   captureSignature(signatureData) {
