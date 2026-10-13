@@ -1,7 +1,7 @@
 :root {
   --text: #6b6375;
   --text-h: #08060d;
-  --bg: #fff;
+  --bg: #C2A07A;
   --border: #e5e4e7;
   --code-bg: #f4f3ec;
   --accent: #aa3bff;
@@ -30,11 +30,11 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --text: #9ca3af;
     --text-h: #f3f4f6;
-    --bg: #16171d;
+    --bg: #ECDEC9;
     --border: #2e303a;
     --code-bg: #1f2028;
     --accent: #c084fc;
@@ -48,7 +48,7 @@
   #social .button-icon {
     filter: invert(1) brightness(2);
   }
-}
+} */
 
 body {
   margin: 0;
@@ -64,6 +64,7 @@ body {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  background: #D2B48C;
 }
 
 h1,
@@ -108,4 +109,36 @@ code {
   line-height: 135%;
   padding: 4px 8px;
   background: var(--code-bg);
+}
+
+.simple-form button {
+  background-color: #AB7E4C;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.simple-form button:hover {
+  background-color: #8B5E2C;
+}
+
+.simple-form input {
+  background-color: #ECDEC9;
+  color:black;
+  padding: 10px;
+  font-size: 15px;
+}
+.simple-form{
+  padding: 50px
+}
+
+.simple-form h2{
+  margin-bottom: 20px;
+  color: #AB7E4C;
+  font-weight: bold;
+  font-family: Arial;
+  font-size: 32px;
 }
