@@ -1,13 +1,18 @@
 :root {
   --text: #6b6375;
   --text-h: #08060d;
-  --bg: #C2A07A;
+  --bg: #C2A07A; /* color for outer portion (not for but the outside left/right border) */
+  --light-bg: #D2B48C;  /* color for inner portion (not for but the inside left/right border) */
   --border: #e5e4e7;
-  --code-bg: #f4f3ec;
+  /* removed for now to match current color scheme
+  /* --code-bg: #f4f3ec;
   --accent: #aa3bff;
   --accent-bg: rgba(170, 59, 255, 0.1);
   --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
+  --social-bg: rgba(244, 243, 236, 0.5); */
+  --accent: #AB7E4C;
+  --dark-accent: #8B5E2C;
+  --light-accent: #ECDEC9;
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
@@ -29,7 +34,7 @@
     font-size: 16px;
   }
 }
-
+/* removed so for now dark mode is not supported to keep a simple consistent color scheme
 /* @media (prefers-color-scheme: dark) {
   :root {
     --text: #9ca3af;
@@ -64,7 +69,7 @@ body {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  background: #D2B48C;
+  background: var(--light-bg);
 }
 
 h1,
@@ -112,7 +117,7 @@ code {
 }
 
 .simple-form button {
-  background-color: #AB7E4C;
+  background-color: var(--accent);
   color: white;
   border: none;
   border-radius: 20px;
@@ -122,11 +127,11 @@ code {
 }
 
 .simple-form button:hover {
-  background-color: #8B5E2C;
+  background-color: var(--dark-accent);
 }
 
 .simple-form input {
-  background-color: #ECDEC9;
+  background-color: var(--light-accent);
   color:black;
   padding: 10px;
   font-size: 15px;
@@ -137,7 +142,7 @@ code {
 
 .simple-form h2{
   margin-bottom: 20px;
-  color: #AB7E4C;
+  color: var(--accent);
   font-weight: bold;
   font-family: Arial;
   font-size: 32px;
