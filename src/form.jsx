@@ -40,7 +40,7 @@ function Form() {
       <input name= "trackingNo" type="text" placeholder="TRACKING NUMBER" required />
       <input name= "carrier" type="text" placeholder="CARRIER" required />
 
-      <button type="submit" className="submit">Submit</button>
+      <button type="submit">Submit</button>
     </form>
   );
 }
