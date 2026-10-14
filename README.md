@@ -111,6 +111,18 @@ The project will include testing for important functions such as:
 
 The project is currently focused on requirements, system design, database planning, and implementation of the main package tracking features.
 
+## How to run
+
+**Front end terminal** 
+```
+npm install
+npm run dev
+```
+**Backend terminal**
+```
+npm start
+```
+
 ## Future Improvements
 
 Possible future improvements include:
