@@ -188,17 +188,36 @@
   gap: 20px;
   width: 500px;
   margin: 0 auto;
-}
-
-.simple-form input {
-  padding: 10px;
-  font-size: 15px;
-  border: 1px solid var(--border);
-  border-radius: 20px;
+  padding: 50px;
 }
 
 .simple-form button {
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 20px;
   padding: 10px;
   font-size: 15px;
   cursor: pointer;
+}
+
+.simple-form button:hover {
+  background-color: var(--dark-accent);
+}
+
+.simple-form input {
+  background-color: var(--light-accent);
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  color:black;
+  padding: 10px;
+  font-size: 15px;
+}
+
+.simple-form h2{
+  margin-bottom: 20px;
+  color: var(--accent);
+  font-weight: bold;
+  font-family: Arial;
+  font-size: 32px;
 }
