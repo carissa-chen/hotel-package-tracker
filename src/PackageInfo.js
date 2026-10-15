@@ -1,12 +1,11 @@
 class PackageInfo {
-    constructor(firstName, lastName, trackingNo, deliveryDate, deliveryTime)
+    constructor(firstName, lastName, trackingNo, deliveryDate, deliveryTime, roomNumber, status)
     {
         this.firstName = firstName;
         this.lastName = lastName;
         this.trackingNo = trackingNo;
         this.deliveryDate = deliveryDate;
         this.deliveryTime  = deliveryTime;
-        this.packageId =  packageId;
         this.roomNumber = roomNumber;
         this.status = status;
     }
@@ -15,7 +14,7 @@ class PackageInfo {
     {
         // TODO:  insert code to log required package info 
     }
-    markAsRetrived()
+    markAsRetrieved()
     {
          // TODO:  insert code
     }
