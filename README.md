@@ -50,9 +50,11 @@ The final technology stack is still under consideration.
 
 ### Current Stack
 
-* **Frontend:** React Native
-* **Backend:** Node.js
-* **Database:** MySQL *(tentative)*
+- **Frontend:** JavaScript, React, Vite, and CSS
+- **Backend:** Node.js and Express
+- **Database:** MongoDB with Mongoose
+- **Testing:** Jest and Supertest
+- **Version control and CI:** GitHub and GitHub Actions
 
 ### Planned Technologies
 
@@ -67,19 +69,34 @@ The final technology stack is still under consideration.
 ## Project Structure
 
 ```text
-Hotel-Packing-Tracker/
-├── src/
-├── tests/
-├── docs/
-├── README.md
-└── .gitignore
+hotel-package-tracker/
+├── src/                 # React frontend and supporting code
+├── models/              # Mongoose package model
+├── routes/              # Express package routes
+├── tests/               # Automated API tests
+├── docs/                # Project diagrams and documentation
+├── .github/workflows/   # GitHub Actions test workflow
+├── app.js               # Express app configuration
+├── server.js            # MongoDB connection and backend server
+├── vite.config.js       # Vite configuration
+├── package.json         # Dependencies and npm scripts
+└── README.md
 ```
 
 > The project structure may change as development continues.
 
 ## Installation
 
-Installation instructions will be added once the development environment and technology stack are finalized.
+Install Node.js and npm. You also need a running MongoDB server or a MongoDB connection string.
+
+From the project directory, install dependencies:
+
+```bash
+npm install
+```
+
+By default, the backend connects to `mongodb://localhost:27017/hotel-tracker`. To use another database, set the `MONGO_URI` environment variable before starting the backend.
+
 
 ## Usage
 
@@ -105,11 +122,26 @@ The project will include testing for important functions such as:
 * Package retrieval
 * User authentication
 
+The project uses Jest and Supertest for automated API tests. The current tests check that the package endpoint:
+
+- Creates a package when given valid input
+- Returns an error when required information is missing
+
+The package model is mocked in these tests, so they do not test a live MongoDB connection.
+
+Run the tests with:
+
+```bash
+npm test
+```
+GitHub Actions also runs the tests on pushes and pull requests to `main`.
+
 ## Project Status
 
 **Currently in development.**
 
-The project is currently focused on requirements, system design, database planning, and implementation of the main package tracking features.
+The running app supports package logging. Features described as planned have not yet been added to the running app.
+
 
 ## How to run
 
