@@ -6,9 +6,9 @@ const packageSchema = new mongoose.Schema({
     required: [true, 'Tracking number is required'],
     trim: true
   },
-  recipientName: {
+  guestName: {
     type: String,
-    required: [true, 'Recipient name is required'],
+    required: [true, 'Guest name is required'],
     trim: true
   },
   carrier: {
