@@ -4,7 +4,7 @@ function Form() {
     
     const formData = new FormData (event.currentTarget);
     const packageData = {
-    recipientName: `${formData.get("firstName")} ${formData.get("lastName")}`,
+    guestName: `${formData.get("firstName")} ${formData.get("lastName")}`,
     trackingNumber: formData.get("trackingNo"),
     carrier: formData.get("carrier")
     };
