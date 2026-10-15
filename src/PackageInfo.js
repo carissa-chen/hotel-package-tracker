@@ -1,12 +1,11 @@
 class PackageInfo {
-    constructor(firstName, lastName, trackingNo, deliveryDate, deliveryTime, roomNumber, status)
+    constructor(firstName, lastName, trackingNo, deliveryDate, deliveryTime, status)
     {
         this.firstName = firstName;
         this.lastName = lastName;
         this.trackingNo = trackingNo;
         this.deliveryDate = deliveryDate;
         this.deliveryTime  = deliveryTime;
-        this.roomNumber = roomNumber;
         this.status = status;
     }
     
