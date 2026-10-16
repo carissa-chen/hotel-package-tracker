@@ -1,9 +1,9 @@
 class AdditionalPackageInfo {
-  constructor(roomNo, packageType, recipientName) 
+  constructor(roomNo, packageType, guestName) 
   {
     this.roomNo = roomNo;
     this.packageType = packageType;
-    this.recipientName = recipientName;
+    this.guestName = guestName;
   }
     updateAdditionalInfo() 
   {
