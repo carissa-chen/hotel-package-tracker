@@ -5,19 +5,19 @@ const Package = require('../models/Package');
 // POST /api/packages - REQ-1: Log a new package
 router.post('/', async (req, res) => {
   try {
-    const { trackingNumber, recipientName, carrier } = req.body;
+    const { trackingNumber, guestName, carrier } = req.body;
 
     // Validate required fields
-    if (!trackingNumber || !recipientName) {
+    if (!trackingNumber || !guestName) {
       return res.status(400).json({
-        error: 'Validation Error: trackingNumber and recipientName are required.'
+        error: 'Validation Error: trackingNumber and guestName are required.'
       });
     }
 
     // Create and save new package record
     const newPackage = new Package({
       trackingNumber,
-      recipientName,
+      guestName,
       carrier
     });
 
@@ -51,7 +51,7 @@ router.get('/search', async (req, res) => {
     const packages = await Package.find({
       $or: [
         { trackingNumber: { $regex: query, $options: 'i' } },
-        { recipientName: { $regex: query, $options: 'i' } }
+        { guestName: { $regex: query, $options: 'i' } }
       ]
     });
     return res.status(200).json(packages);

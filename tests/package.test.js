@@ -13,7 +13,7 @@ describe('REQ-1: Log Packages Endpoint', () => {
   it('should create and save a new package record when given valid input', async () => {
     const payload = {
       trackingNumber: 'TRK987654321',
-      recipientName: 'Jane Doe',
+      guestName: 'Jane Doe',
       carrier: 'FedEx'
     };
 
@@ -36,7 +36,7 @@ describe('REQ-1: Log Packages Endpoint', () => {
   it('should return HTTP 400 if required fields are missing', async () => {
     const res = await request(app)
       .post('/api/packages')
-      .send({ recipientName: 'Jane Doe' });
+      .send({ guestName: 'Jane Doe' });
 
     expect(res.statusCode).toBe(400);
   });
@@ -49,8 +49,8 @@ describe('REQ-2: Retrieve & Search Packages Endpoint', () => {
 
   it('GET /api/packages should return list of packages', async () => {
     const mockPackages = [
-      { trackingNumber: 'TRK123', recipientName: 'Jane Doe', status: 'Logged' },
-      { trackingNumber: 'TRK456', recipientName: 'John Smith', status: 'Picked Up' }
+      { trackingNumber: 'TRK123', guestName: 'Jane Doe', status: 'Logged' },
+      { trackingNumber: 'TRK456', guestName: 'John Smith', status: 'Picked Up' }
     ];
 
     Package.find = jest.fn().mockResolvedValue(mockPackages);
@@ -63,7 +63,7 @@ describe('REQ-2: Retrieve & Search Packages Endpoint', () => {
 
   it('GET /api/packages/search should return matching search results', async () => {
     const mockSearchResult = [
-      { trackingNumber: 'TRK987654321', recipientName: 'Jane Doe' }
+      { trackingNumber: 'TRK987654321', guestName: 'Jane Doe' }
     ];
 
     Package.find = jest.fn().mockResolvedValue(mockSearchResult);
