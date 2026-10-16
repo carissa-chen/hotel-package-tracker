@@ -41,3 +41,37 @@ describe('REQ-1: Log Packages Endpoint', () => {
     expect(res.statusCode).toBe(400);
   });
 });
+
+describe('REQ-2: Retrieve & Search Packages Endpoint', () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
+  it('GET /api/packages should return list of packages', async () => {
+    const mockPackages = [
+      { trackingNumber: 'TRK123', recipientName: 'Jane Doe', status: 'Logged' },
+      { trackingNumber: 'TRK456', recipientName: 'John Smith', status: 'Picked Up' }
+    ];
+
+    Package.find = jest.fn().mockResolvedValue(mockPackages);
+
+    const res = await request(app).get('/api/packages');
+
+    expect(res.statusCode).toBe(200);
+    expect(res.body.length).toBe(2);
+  });
+
+  it('GET /api/packages/search should return matching search results', async () => {
+    const mockSearchResult = [
+      { trackingNumber: 'TRK987654321', recipientName: 'Jane Doe' }
+    ];
+
+    Package.find = jest.fn().mockResolvedValue(mockSearchResult);
+
+    const res = await request(app)
+      .get('/api/packages/search?q=TRK987654321');
+
+    expect(res.statusCode).toBe(200);
+    expect(res.body[0].trackingNumber).toBe('TRK987654321');
+  });
+});
