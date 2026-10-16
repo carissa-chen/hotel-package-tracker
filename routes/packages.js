@@ -3,12 +3,11 @@ const router = express.Router();
 const Package = require('../models/Package');
 
 // POST /api/packages - REQ-1: Log a new package
-// Changed route path from '/api/packages' to '/' to prevent double pathing
 router.post('/', async (req, res) => {
   try {
     const { trackingNumber, recipientName, carrier } = req.body;
 
-    // Validate required fields (carrier removed from required check to pass REQ-1 tests)
+    // Validate required fields
     if (!trackingNumber || !recipientName) {
       return res.status(400).json({
         error: 'Validation Error: trackingNumber and recipientName are required.'
@@ -29,6 +28,36 @@ router.post('/', async (req, res) => {
   } catch (error) {
     return res.status(500).json({
       error: 'Server Error: Unable to save package record.'
+    });
+  }
+});
+
+// GET /api/packages - Retrieve all packages
+router.get('/', async (req, res) => {
+  try {
+    const packages = await Package.find();
+    return res.status(200).json(packages);
+  } catch (error) {
+    return res.status(500).json({
+      error: 'Server Error: Unable to retrieve packages.'
+    });
+  }
+});
+
+// GET /api/packages/search - Search packages
+router.get('/search', async (req, res) => {
+  try {
+    const query = req.query.q;
+    const packages = await Package.find({
+      $or: [
+        { trackingNumber: { $regex: query, $options: 'i' } },
+        { recipientName: { $regex: query, $options: 'i' } }
+      ]
+    });
+    return res.status(200).json(packages);
+  } catch (error) {
+    return res.status(500).json({
+      error: 'Server Error: Unable to search packages.'
     });
   }
 });
