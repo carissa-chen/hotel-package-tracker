@@ -99,5 +99,5 @@ The server in `server.js` connects to MongoDB before starting the Express server
 - Part 3 client side: Matthew
 - Part 3 server side: David
 - Part 4 mismatches: Travis
-- Part 5 candidate requirements: Travis
-- Part 6 unit test cases: Travis
+- Part 5 candidate requirements: matthew
+- Part 6 unit test cases: Nish
