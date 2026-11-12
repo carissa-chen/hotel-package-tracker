@@ -1,4 +1,4 @@
-# Testable Requirements: [Project Name]
+# Testable Requirements: Hotel Package Tracker
 
 **Team number:** [XX]
 **Inherited from:** Team [XX]
@@ -7,10 +7,22 @@
 
 | Area of the system | Owner | ID prefix |
 |---|---|---|
-| [example: Accounts and login] | [name] | [initials, like MG] |
-| | | |
-| | | |
-| | | |
+| Package Logging (API) | David Martindale | DM |
+| Frontend / UI | Matthew | MR |
+| Data Models & Stubs | Travis | T |
+| Search & Retrieval | Nish | N |
+
+**Part 5 requirements hand-off:**
+- CR-1 → David (Package Logging)
+- CR-2 → Travis (Data Models)
+- CR-3 → Travis (Data Models)
+- CR-4 → Travis (Data Models)
+- CR-5 → Nish (Search & Retrieval)
+
+**Part 6 tests hand-off:**
+- TC-1 → David (Package Logging)
+- TC-2 → David (Package Logging)
+- TC-3 → David (Package Logging)
 
 <!--
 RULES
@@ -23,103 +35,96 @@ RULES
 
 ---
 
-## Section: [Your Area] ([Your Name])
+## Section: Package Logging (David Martindale)
 
 ### Stakeholder Goals
 
 | ID | Stakeholder | Goal |
 |---|---|---|
-| G-XX-01 | | |
+| G-DM-01 | | |
 
 ### Functional Requirements
 
 | ID | Requirement | Status | From Part 5 |
 |---|---|---|---|
-| REQ-XX-01 | | | |
-| REQ-XX-02 | | | |
-| REQ-XX-03 | | | |
+| REQ-DM-01 | | | CR-1 |
+| REQ-DM-02 | | | |
+| REQ-DM-03 | | | |
 
 ### Non-Functional Requirements
 
 | ID | Requirement | Status | From Part 5 |
 |---|---|---|---|
-| NFR-XX-01 | | | |
-
-### Example of a Good Rewrite
-
-| ID | Requirement | Status | From Part 5 |
-|---|---|---|---|
-| REQ-MG-01 | The system shall reject a profile bio longer than 280 characters with the error "Bio must be 280 characters or fewer." | Suspected bug | CR-3 (Unconfirmed): The system shall limit the bio to 280 characters. |
-| NFR-MG-01 | The profile page loads in under 2 seconds with 100 profiles in the database. | Confirmed | New |
+| NFR-DM-01 | | | |
 
 ---
 
-## Section: [Your Area] ([Your Name])
+## Section: Frontend / UI (Matthew)
 
 ### Stakeholder Goals
 
 | ID | Stakeholder | Goal |
 |---|---|---|
-| | | |
+| G-MR-01 | | |
 
 ### Functional Requirements
 
 | ID | Requirement | Status | From Part 5 |
 |---|---|---|---|
-| | | | |
-| | | | |
-| | | | |
+| REQ-MR-01 | | | |
+| REQ-MR-02 | | | |
+| REQ-MR-03 | | | |
 
 ### Non-Functional Requirements
 
 | ID | Requirement | Status | From Part 5 |
 |---|---|---|---|
-| | | | |
+| NFR-MR-01 | | | |
 
 ---
 
-## Section: [Your Area] ([Your Name])
+## Section: Data Models & Stubs (Travis)
 
 ### Stakeholder Goals
 
 | ID | Stakeholder | Goal |
 |---|---|---|
-| | | |
+| G-T-01 | | |
 
 ### Functional Requirements
 
 | ID | Requirement | Status | From Part 5 |
 |---|---|---|---|
-| | | | |
-| | | | |
-| | | | |
+| REQ-T-01 | | | CR-2 |
+| REQ-T-02 | | | CR-3 |
+| REQ-T-03 | | | CR-4 |
 
 ### Non-Functional Requirements
 
 | ID | Requirement | Status | From Part 5 |
 |---|---|---|---|
-| | | | |
+| NFR-T-01 | | | |
 
 ---
 
-## Section: [Your Area] ([Your Name])
+## Section: Search & Retrieval (Nish)
 
 ### Stakeholder Goals
 
 | ID | Stakeholder | Goal |
 |---|---|---|
-| | | |
+| G-N-01 | | |
 
 ### Functional Requirements
 
 | ID | Requirement | Status | From Part 5 |
 |---|---|---|---|
-| | | | |
-| | | | |
-| | | | |
+| REQ-N-01 | | | CR-5 |
+| REQ-N-02 | | | |
+| REQ-N-03 | | | |
 
 ### Non-Functional Requirements
 
 | ID | Requirement | Status | From Part 5 |
 |---|---|---|---|
-| | | | |
+| NFR-N-01 | | | |
