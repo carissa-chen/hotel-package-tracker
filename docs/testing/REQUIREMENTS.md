@@ -127,10 +127,10 @@ Covers `routes/packages.js` → `router.post('/')`, `models/Package.js`, `app.js
 |-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------|-------------|
 | REQ-MR-01 | When POST api/packages receives a JSON object containing a `trackingNumber`, `guestName`, and `carrier`, the system will create and save a package record, then respond HTTP 201 with the saved record that includes the three mentioned values, an `_id`, a `status`, and a `createdAt` timestamp. | Confirmed | CR-1        |
 | REQ-MR-02 | `PackageInfo.js` creates an object with 6 fields: `firstName`, `lastName`, `trackingNo`, `deliveryDate`, `deliveryTime`, and `status`, including 4 methods: `logPackage()`, `markAsRetrieved()`, `applyScanResults()`, `getDetails()`.                                                              | Confirmed | CR-2        |
-| REQ-MR-03 | The system shall search for packages in its data using a tracking number and guest name.                                                                                                                                                                                                            | Confirmed | CR-5        |
+| REQ-MR-03 | `PackageRepository.js` creates an object with a `connectionString` and sets `dbConnection` to null, and includes a method `findPackagesByCriteria` that returns an array of packages matching a `query` and `filter`.                                                                               | Confirmed | CR-5        |
 
 ### Non-Functional Requirements
 
-| ID        | Requirement | Status | From Part 5 |
-|-----------|---|---|---|
-| NFR-MR-01 | | | |
+| ID        | Requirement                                                | Status    | From Part 5 |
+|-----------|------------------------------------------------------------|-----------|-------------|
+| NFR-MR-01 | Employees can scan packages to enter them into the system. | Confirmed | CR-4        |
