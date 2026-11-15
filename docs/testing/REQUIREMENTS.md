@@ -65,27 +65,27 @@ Covers `routes/packages.js` → `router.post('/')`, `models/Package.js`, `app.js
 
 ---
 
-## Section: Frontend / UI (Matthew)
+## Section: Frontend / UI (Nish)
 
 ### Stakeholder Goals
 
-| ID | Stakeholder | Goal |
-|---|---|---|
-| G-MR-01 | | |
+| ID      | Stakeholder | Goal |
+|---------|---|---|
+| G-NM-01 | | |
 
 ### Functional Requirements
 
-| ID | Requirement | Status | From Part 5 |
-|---|---|---|---|
-| REQ-MR-01 | | | |
-| REQ-MR-02 | | | |
-| REQ-MR-03 | | | |
+| ID        | Requirement | Status | From Part 5 |
+|-----------|---|---|---|
+| REQ-NM-01 | | | |
+| REQ-NM-02 | | | |
+| REQ-NM-03 | | | |
 
 ### Non-Functional Requirements
 
-| ID | Requirement | Status | From Part 5 |
-|---|---|---|---|
-| NFR-MR-01 | | | |
+| ID        | Requirement | Status | From Part 5 |
+|-----------|---|---|---|
+| NFR-NM-01 | | | |
 
 ---
 
@@ -113,24 +113,24 @@ Covers `routes/packages.js` → `router.post('/')`, `models/Package.js`, `app.js
 
 ---
 
-## Section: Search & Retrieval (Nish)
+## Section: Search & Retrieval (Matthew)
 
 ### Stakeholder Goals
 
-| ID | Stakeholder | Goal |
-|---|---|---|
-| G-NM-01 | | |
+| ID      | Stakeholder | Goal |
+|---------|---|---|
+| G-MR-01 | | |
 
 ### Functional Requirements
 
-| ID | Requirement | Status | From Part 5 |
-|---|---|---|---|
-| REQ-NM-01 | | | CR-5 |
-| REQ-NM-02 | | | |
-| REQ-NM-03 | | | |
+| ID        | Requirement | Status | From Part 5 |
+|-----------|---|---|---|
+| REQ-MR-01 | | | CR-5 |
+| REQ-MR-02 | | | |
+| REQ-MR-03 | | | |
 
 ### Non-Functional Requirements
 
-| ID | Requirement | Status | From Part 5 |
-|---|---|---|---|
-| NFR-NM-01 | | | |
+| ID        | Requirement | Status | From Part 5 |
+|-----------|---|---|---|
+| NFR-MR-01 | | | |
