@@ -123,11 +123,11 @@ Covers `routes/packages.js` → `router.post('/')`, `models/Package.js`, `app.js
 
 ### Functional Requirements
 
-| ID        | Requirement | Status    | From Part 5 |
-|-----------|---|-----------|-------------|
-| REQ-MR-01 | The system shall create and save package records that contain a tracking number, guest name, and carrier.| Confirmed | CR-1        |
-| REQ-MR-02 | The system shall create records of package pick-ups containing signature data and a pick up time.| Confirmed | CR-3        |
-| REQ-MR-03 | The system shall search for packages in its data using a tracking number and guest name.| Confirmed | CR-5        |
+| ID        | Requirement                                                                                                                                                                                                                                                                                         | Status    | From Part 5 |
+|-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------|-------------|
+| REQ-MR-01 | When POST api/packages receives a JSON object containing a `trackingNumber`, `guestName`, and `carrier`, the system will create and save a package record, then respond HTTP 201 with the saved record that includes the three mentioned values, an `_id`, a `status`, and a `createdAt` timestamp. | Confirmed | CR-1        |
+| REQ-MR-02 | `PackageInfo.js` creates                                                                                                                                                                                                                                                                            | Confirmed | CR-2        |
+| REQ-MR-03 | The system shall search for packages in its data using a tracking number and guest name.                                                                                                                                                                                                            | Confirmed | CR-5        |
 
 ### Non-Functional Requirements
 
