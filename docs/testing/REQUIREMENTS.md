@@ -8,9 +8,9 @@
 | Area of the system | Owner | ID prefix |
 |---|---|---|
 | Package Logging (API) | David Martindale | DM |
-| Frontend / UI | Matthew | MR |
+| Search & Retrieval | Matthew | MR |
 | Data Models & Stubs | Travis | TT |
-| Search & Retrieval | Nish | NM |
+| Frontend / UI | Nish | NM |
 
 **Part 5 requirements hand-off:**
 - CR-1 → David (Package Logging)
