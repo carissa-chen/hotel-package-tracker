@@ -17,7 +17,7 @@
 - CR-2 → Travis (Data Models)
 - CR-3 → Travis (Data Models)
 - CR-4 → Travis (Data Models)
-- CR-5 → Nish (Search & Retrieval)
+- CR-5 → Matthew (Search & Retrieval)
 
 **Part 6 tests hand-off:**
 - TC-1 → David (Package Logging)
