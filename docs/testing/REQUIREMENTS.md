@@ -117,17 +117,17 @@ Covers `routes/packages.js` → `router.post('/')`, `models/Package.js`, `app.js
 
 ### Stakeholder Goals
 
-| ID      | Stakeholder | Goal |
-|---------|---|---|
-| G-MR-01 | | |
+| ID      | Stakeholder                          | Goal                                                                                 |
+|---------|--------------------------------------|--------------------------------------------------------------------------------------|
+| G-MR-01 | Hotel staff responsible for packages | Hotel staff in charge of handling packages should be able to search for the package. |
 
 ### Functional Requirements
 
-| ID        | Requirement | Status | From Part 5 |
-|-----------|---|---|---|
-| REQ-MR-01 | | | CR-5 |
-| REQ-MR-02 | | | |
-| REQ-MR-03 | | | |
+| ID        | Requirement | Status    | From Part 5 |
+|-----------|---|-----------|-------------|
+| REQ-MR-01 | The system shall create and save package records that contain a tracking number, guest name, and carrier.| Confirmed | CR-1        |
+| REQ-MR-02 | The system shall create records of package pick-ups containing signature data and a pick up time.| Confirmed | CR-3        |
+| REQ-MR-03 | The system shall search for packages in its data using a tracking number and guest name.| Confirmed | CR-5        |
 
 ### Non-Functional Requirements
 
