@@ -71,21 +71,21 @@ Covers `routes/packages.js` → `router.post('/')`, `models/Package.js`, `app.js
 
 | ID      | Stakeholder | Goal |
 |---------|---|---|
-| G-NM-01 | | |
+| G-NM-01 | Front desk staff | Front desk staff need to log a guest package quickly and know whether it was actually saved so they can retrieve it later. |
 
 ### Functional Requirements
 
 | ID        | Requirement | Status | From Part 5 |
 |-----------|---|---|---|
-| REQ-NM-01 | | | |
-| REQ-NM-02 | | | |
-| REQ-NM-03 | | | |
+| REQ-NM-01 | When a user enters a first name, last name, tracking number, and carrier and submits the form, the frontend shall send a POST request to /api/packages containing the combined guest name, tracking number, and carrier as JSON. | Confirmed | New |
+| REQ-NM-02 | When the server responds with HTTP 201 and a saved package record, the frontend shall display the message "Package logged successfully!". | Confirmed | New |
+| REQ-NM-03 | When the server responds with an HTTP error such as 400 or 500, the frontend shall display an error message and shall not display "Package logged successfully!". | Suspected bug | New |
 
 ### Non-Functional Requirements
 
 | ID        | Requirement | Status | From Part 5 |
 |-----------|---|---|---|
-| NFR-NM-01 | | | |
+| NFR-NM-01 | Ease of use: the form shall require the first name, last name, tracking number, and carrier fields before allowing submission. | Confirmed | New |
 
 ---
 
