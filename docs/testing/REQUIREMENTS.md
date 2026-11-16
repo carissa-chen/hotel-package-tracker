@@ -21,8 +21,8 @@
 
 **Part 6 tests hand-off:**
 - TC-1 → David (Package Logging)
-- TC-2 → Nish(Package Logging)
-- TC-3 → Mattew (Package Logging)
+- TC-2 → Nish (Package Logging)
+- TC-3 → Matthew (Package Logging)
 
 <!--
 RULES
