@@ -19,36 +19,97 @@ HOW TO USE THIS FILE
 
 ---
 
-**Test ID:**
-**From Part 6:** (old test number, or New)
-**Written by:**
-**Title:**
-**Traces to:**
-**Test type:** (Unit / Integration / System / Acceptance / Boundary Value / Negative / Security)
-**Preconditions:**
+**Test ID:** MR-01
+
+**From Part 6:** TC-2
+
+**Written by:** Matthew Rohrer
+
+**Title:** Package entry that is missing data fails and returns HTTP 400
+
+**Traces to:** REQ-MR-01
+
+**Test type:** Negative
+
+**Preconditions:** `npm install` and `npm run dev` have been run to start the front-end of the program. No database needed because `tests/package.test.js` mocks packages.
+
 **Test data:**
 
-**Steps:**
-1.
-2.
-3.
+```json
+{ "guestName": "Jane Doe" }
+```
 
-**Expected result:**
-**Actual result:**
-**Status:** (Pass / Fail)
-**Severity:** (Critical / Major / Minor, Fail only)
-**V or V:** (Verification / Validation, Fail only)
-**GitHub Issue:** (#number, Fail only)
+**Steps:**
+1. In project terminal, run `npx tests/package.test.js -t "should return HTTP 400 if required fields are missing"`.
+2. Read Jest summary.
+
+**Expected result:** Jest says test passed, response status is 400.
+
+**Actual result:** Jest says 1 test passed, 3 skipped, 4 total. Response status is 400.
+
+**Status:** Pass
+
+**Severity:** N/A
+
+**V or V:** N/A
+
+**GitHub Issue:** N/A
 
 ---
 
-**Test ID:**
-**From Part 6:** (old test number, or New)
-**Written by:**
+**Test ID:** MR-02
+
+**From Part 6:** New
+
+**Written by:** Matthew Rohrer
+
+**Title:** Hotel staff should be able to search for packages
+
+**Traces to:** G-MR-01
+
+**Test type:** Acceptance
+
+**Preconditions:** Both front-end and back-end of the program are running. `packages` holds at least one package.
+
+**Test data:**
+
+```json
+{ "trackingNumber": "U1230984", "guestName": "John Smith", "carrier": "USPS" }
+```
+
+**Steps:**
+1. Send `POST http://127.0.0.1:5000/api/packages` with header `Content-Type: application/json` with test data
+2. Send `GET http://127.0.0.1:5000/api/packages/search`.
+3. Staff should be able to search for the package based on package data.
+
+**Expected result:** Search returns HTTP 200 and package data that was found.
+
+**Actual result:** Correct package data was found and returned with HTTP 200.
+
+**Status:** Pass
+
+**Severity:** N/A
+
+**V or V:** N/A
+
+**GitHub Issue:** N/A
+
+---
+
+**Test ID:** MR-03
+
+**From Part 6:** New
+
+**Written by:** Matthew Rohrer
+
 **Title:**
+
 **Traces to:**
+
 **Test type:**
+
 **Preconditions:**
+
 **Test data:**
 
 **Steps:**
@@ -57,21 +118,33 @@ HOW TO USE THIS FILE
 3.
 
 **Expected result:**
+
 **Actual result:**
+
 **Status:**
+
 **Severity:**
+
 **V or V:**
+
 **GitHub Issue:**
 
 ---
 
-**Test ID:**
-**From Part 6:** (old test number, or New)
-**Written by:**
+**Test ID:** MR-04
+
+**From Part 6:** New
+
+**Written by:** Matthew Rohrer
+
 **Title:**
+
 **Traces to:**
+
 **Test type:**
+
 **Preconditions:**
+
 **Test data:**
 
 **Steps:**
@@ -80,33 +153,15 @@ HOW TO USE THIS FILE
 3.
 
 **Expected result:**
+
 **Actual result:**
+
 **Status:**
+
 **Severity:**
+
 **V or V:**
-**GitHub Issue:**
 
----
-
-**Test ID:**
-**From Part 6:** (old test number, or New)
-**Written by:**
-**Title:**
-**Traces to:**
-**Test type:**
-**Preconditions:**
-**Test data:**
-
-**Steps:**
-1.
-2.
-3.
-
-**Expected result:**
-**Actual result:**
-**Status:**
-**Severity:**
-**V or V:**
 **GitHub Issue:**
 
 ---
