@@ -74,11 +74,11 @@ The `PackageInfo` object is created successfully, and its six fields contain the
 
 **Expected result:** The `PickupRecord` object is created successfully, and it stores the signature data `Jane Doe signature` and the pickup time `2026-11-11 3:00 PM`. The `captureSignature()` method updates the record with the provided signature data and pickup time.
 
-**Actual result:**
-**Status:**
-**Severity:**
-**V or V:**
-**GitHub Issue:**
+**Actual result:** The test failed because `pickupRecord.signatureData` returned `undefined` instead of `Jane Doe signature`. The test stopped at this assertion, so the pickup time could not be verified. The `captureSignature()` method is unfinished, and the signature data is stored in a private field that cannot be accessed by the test.
+**Status:** Fail
+**Severity:** Major
+**V or V:** Verification
+**GitHub Issue:** Create an issue for REQ-TT-02
 
 ---
 
