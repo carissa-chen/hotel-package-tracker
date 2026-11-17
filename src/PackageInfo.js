@@ -23,7 +23,14 @@ class PackageInfo {
     }
     getDetails()
     {
-        // TODO: insert code
+        return {
+            firstName: this.firstName,
+            lastName: this.lastName,
+            trackingNo: this.trackingNo,
+            deliveryDate: this.deliveryDate,
+            deliveryTime: this.deliveryTime,
+            status: this.status
+        };
     }
 
 
