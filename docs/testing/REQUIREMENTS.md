@@ -1,7 +1,7 @@
 # Testable Requirements: Hotel Package Tracker
 
-**Team number:** [XX]
-**Inherited from:** Team [XX]
+**Team number:** [15]
+**Inherited from:** Team [14]
 
 ## Who Owns What
 
