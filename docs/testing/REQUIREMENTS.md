@@ -1,7 +1,7 @@
 # Testable Requirements: Hotel Package Tracker
 
-**Team number:** [XX]
-**Inherited from:** Team [XX]
+**Team number:** [15]
+**Inherited from:** Team [14]
 
 ## Who Owns What
 
@@ -95,21 +95,24 @@ Covers `routes/packages.js` → `router.post('/')`, `models/Package.js`, `app.js
 
 | ID | Stakeholder | Goal |
 |---|---|---|
-| G-TT-01 | | |
+| G-TT-01 | Hotel front desk staff | Front desk staff need package data to be stored completely and accurately so package information can be recorded, updated, and retrieved without losing important details. |
 
 ### Functional Requirements
 
 | ID | Requirement | Status | From Part 5 |
 |---|---|---|---|
-| REQ-TT-01 | | | CR-2 |
-| REQ-TT-02 | | | CR-3 |
-| REQ-TT-03 | | | CR-4 |
+| REQ-TT-01 | The `PackageInfo` class shall create an object containing `firstName`, `lastName`, `trackingNo`, `deliveryDate`, `deliveryTime`, and `status` fields, and shall provide the methods `logPackage()`, `markAsRetrieved()`, `applyScanResult()`, and `getDetails()`. | Suspected bug | CR-2: The system shall create package objects containing package info and functions related to package storage. |  which may alter the outcome 
+| REQ-TT-02 | The `PickupRecord` class shall create a pickup record containing `signatureData` and `pickupTime`. Its `captureSignature(signatureData)` method shall store the provided signature data and record the pickup time. | Suspected bug | CR-3: The system shall create records of package pick-ups containing signature data and a pick up time. | 
+| REQ-TT-03 | The `scanResult` class shall use `parseText(rawText)` to extract and store the customer’s first name, last name, and tracking number. Its `isValid()` method shall confirm whether all three values are present. | Suspected bug | CR-4: The system shall scan packages and record customers’ first names, last names, and the package tracking number. |
+| REQ-TT-04 | The `scanResult.isValid()` method shall return `true` only when `guestFirstName`, `guestLastName`, and `trackingNo` all contain values, and shall return `false` when any of those fields is empty or missing. | Suspected bug | New, derived from CR-4 |
+
+
 
 ### Non-Functional Requirements
 
 | ID | Requirement | Status | From Part 5 |
 |---|---|---|---|
-| NFR-TT-01 | | | |
+| NFR-TT-01 | Data accuracy: When valid package values are supplied to a data-model class, the class shall preserve each value unchanged and return the complete information through its public methods. | Suspected bug | New |
 
 ---
 

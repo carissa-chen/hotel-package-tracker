@@ -6,11 +6,22 @@ class scanResult {
   }
 
   parseText(rawText) {
-    // TODO
+    if (!rawText) {
+      return;
+    }
+
+    const values = rawText.split(/\r?\n/).map((line) => line.trim()).filter(Boolean);
+    if (values.length >= 3) {
+      [this.guestFirstName, this.guestLastName, this.trackingNo] = values;
+    }
   }
 
   isValid() {
-    // TODO
+    return Boolean(
+      this.guestFirstName &&
+      this.guestLastName &&
+      this.trackingNo
+    );
   }
 }
 
