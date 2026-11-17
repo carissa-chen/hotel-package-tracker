@@ -95,21 +95,21 @@ Covers `routes/packages.js` → `router.post('/')`, `models/Package.js`, `app.js
 
 | ID | Stakeholder | Goal |
 |---|---|---|
-| G-TT-01 | | |
+| G-TT-01 | Hotel front desk staff | Front desk staff need package data to be stored completely and accurately so package information can be recorded, updated, and retrieved without losing important details. |
 
 ### Functional Requirements
 
 | ID | Requirement | Status | From Part 5 |
 |---|---|---|---|
-| REQ-TT-01 | | | CR-2 |
-| REQ-TT-02 | | | CR-3 |
-| REQ-TT-03 | | | CR-4 |
+| REQ-TT-01 | The `PackageInfo` class shall create an object containing `firstName`, `lastName`, `trackingNo`, `deliveryDate`, `deliveryTime`, and `status` fields, and shall provide the methods `logPackage()`, `markAsRetrieved()`, `applyScanResult()`, and `getDetails()`. | Suspected bug | CR-2 |
+| REQ-TT-02 | The `PickupRecord` class shall create a pickup record containing `signatureData` and `pickupTime`. Its signature-capture function shall store the provided signature data and record the pickup time. | Suspected bug | CR-3: The system shall create records of package pick-ups containing signature data and a pick up time. |
+| REQ-TT-03 | The `scanResult` class shall use `parseText(rawText)` to extract and store the customer’s first name, last name, and tracking number. Its validation function shall confirm whether all three values are present. | Suspected bug | CR-4: The system shall scan packages and record customers’ first names, last names, and the package tracking number. |
 
 ### Non-Functional Requirements
 
 | ID | Requirement | Status | From Part 5 |
 |---|---|---|---|
-| NFR-TT-01 | | | |
+| NFR-TT-01 | Data accuracy: The data-model classes shall preserve the package information provided by the user without losing, replacing, or incorrectly changing required values. | Suspected bug | New |
 
 ---
 
