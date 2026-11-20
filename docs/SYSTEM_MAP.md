@@ -16,10 +16,9 @@
 | Unit Test Cases | Part 6 | Nish |
 
 ## Part 1: Purpose
+This system lets hotel front desk staff record and search for guest packages so the packages can stay organized and be found when a guest comes to pick one up.
 
-This system lets hotel front desk staff log and search guest packages so that package records can be stored digitally and retrieved when guests arrive to pick them up.
-
-The user action we traced is creating a package record. A staff member enters the guest's first name, last name, tracking number, and carrier, then submits the form.
+The user action we traced is creating a package record. A staff member enters the guest's name, tracking number, and shipping carrier, then submits the form. The information is sent to the server and saved as a package record.
 
 ## Part 2: As-Built Architecture
 
@@ -77,7 +76,7 @@ Open the handoff UML and compare it to your diagram. Circle every mismatch on yo
 
 | ID | Requirement | Kind | Unit under test (file and function) | Input | Expected output | Predicted result today |
 |---|---|---|---|---|---|---|
-| TC-1 | CR-1 | Positive | `routes/packages.js` → `router.post('/')` | `POST /api/packages` with `{ trackingNumber: 'TRK987654321', guestName: 'Jane Doe', carrier: 'FedEx' }` | HTTP 201 and a response body containing `trackingNumber: 'TRK987654321'` | Pass; this is covered by `tests/package.test.js`. |
+| TC-1 | CR-1 | Positive | `routes/packages.js` → `router.post('/')` | `POST /api/packages` with `{ trackingNumber: 'TRK987654321', guestName: 'Jane Doe', carrier: 'FedEx' }` | The server should return HTTP 201 and the response should include the saved package information, including the tracking number, guest name, and carrier. | Pass; the current test confirms the HTTP 201 response and checks that the tracking number is returned. |
 | TC-2 | CR-2 | Negative | `routes/packages.js` → `router.post('/')` | `POST /api/packages` with `{ guestName: 'Jane Doe', carrier: 'FedEx' }` | HTTP 400 with a validation error because `trackingNumber` is missing | Pass; this is covered by `tests/package.test.js`. |
 | TC-3 | CR-3 | Boundary | `routes/packages.js` → `router.post('/')` and `models/Package.js` → `packageSchema` | Valid package data with no `status` field | The saved package should contain `status: 'Logged'`, the default value at the edge of the optional status input | Pass is expected when the real Mongoose model is used; the current mocked route test supplies the status in the mock result. |
 
