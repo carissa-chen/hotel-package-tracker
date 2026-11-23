@@ -10,3 +10,4 @@ class AdditionalPackageInfo {
     // TODO:  insert code to log optional  package info 
   }
 }
+module.exports = AdditionalPackageInfo;
