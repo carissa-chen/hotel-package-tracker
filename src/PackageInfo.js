@@ -23,6 +23,7 @@ class PackageInfo {
     }
     getDetails()
     {
+        // returns all package information in one object for front desk staff
         return {
             firstName: this.firstName,
             lastName: this.lastName,
