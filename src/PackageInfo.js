@@ -23,7 +23,15 @@ class PackageInfo {
     }
     getDetails()
     {
-        // TODO: insert code
+        // returns all package information in one object for front desk staff
+        return {
+            firstName: this.firstName,
+            lastName: this.lastName,
+            trackingNo: this.trackingNo,
+            deliveryDate: this.deliveryDate,
+            deliveryTime: this.deliveryTime,
+            status: this.status
+        };
     }
 
 
