@@ -16,12 +16,14 @@ One row per failing test. Owners and severity/priority are proposals until the t
 | travis-tt-02: PickupRecord stores signature data and pickup time | Missing feature | #83 | Medium | Medium | Travis | Open |
 | travis-tt-03: scanResult rejects empty scanned text | Missing feature | #84 | Medium  | Medium | Travis | Open |
 | travis-tt-04: Front desk staff can retrieve complete package information | Missing feature | #85 | Medium | Medium | Travis | Open |
-| DM-03: POST returns 500 instead of 400 when carrier is missing | Code bug | #71 | Medium | Medium | David | Fixed on `david`, PR pending |
-| DM-04: Whitespace-only trackingNumber returns 500 instead of 400 | Code bug | #72 | Medium | Medium | David | Fixed on `david`, PR pending |
+| DM-03: POST returns 500 instead of 400 when carrier is missing | Code bug | #71 | Medium | Medium | David | Fixed in PR #89 |
+| DM-04: Whitespace-only trackingNumber returns 500 instead of 400 | Code bug | #72 | Medium | Medium | David | Fixed in PR #89 |
 | DM-07: Duplicate tracking number is accepted and saved twice | Missing feature | #73 | Medium | Medium | David | Open |
 | DM-08: POST accepts requests with no staff credentials | Missing feature | #74 | High | Medium | David | Open |
-| DM-09: Malformed JSON returns an HTML stack trace | Code bug | #75 | Low | Low | David | Fixed on `david`, PR pending |
+| DM-09: Malformed JSON returns an HTML stack trace | Code bug | #75 | Low | Low | David | Fixed in PR #89 |
 | DM-10: No field to tell apart guests with the same name | Missing feature | #76 | Medium | Low | David | Open |
+| MR-03: GET /api/packages/search returns 500 instead of 400 when q is missing | Code bug | #90 | Medium | Medium | Matthew | Open |
+| MR-04: Search treats special characters as a pattern | Code bug | #91 | Medium | Medium | Matthew | Open |
 
 **Bucket definitions used:** Code bug = the test is correct and the code is wrong. Test bug = the code is correct and the test is wrong. Missing feature = the original team never built it. The instructor confirmed that building a missing feature counts as a fix for the bug-fix requirement.
 
@@ -35,7 +37,7 @@ One row per failing test. Owners and severity/priority are proposals until the t
 
 | Date | PR merged | Full suite result | Regressions |
 |---|---|---|---|
-| TODO | TODO | TODO | TODO |
+| Nov 22 | #87, #88, #89 | `npm test` on `main` at `2e84b28`: 8 files, 13 of 13 tests passed | None |
 
 ---
 
