@@ -10,7 +10,7 @@ All three fixes are in one pull request. The link is defined once, on the last l
 ## Bug fix 1: Issue #71, missing carrier returns 500 instead of 400
 
 - **Issue:** [#71](https://github.com/carissa-chen/hotel-package-tracker/issues/71) (DM-03)
-- **PR:** [david pull request][pr]
+- **PR:** [#89][pr]
 - **Test:** `tests/david-dm-03.test.js`
 - **Before:** ![before](screenshots/david_martindale_issue71_before.png)
 - **After:** ![after](screenshots/david_martindale_issue71_after.png)
@@ -21,7 +21,7 @@ All three fixes are in one pull request. The link is defined once, on the last l
 ## Bug fix 2: Issue #72, whitespace-only trackingNumber returns 500 instead of 400
 
 - **Issue:** [#72](https://github.com/carissa-chen/hotel-package-tracker/issues/72) (DM-04)
-- **PR:** [david pull request][pr]
+- **PR:** [#89][pr]
 - **Test:** `tests/david-dm-04.test.js`
 - **Before:** ![before](screenshots/david_martindale_issue72_before.png)
 - **After:** ![after](screenshots/david_martindale_issue72_after.png)
@@ -34,7 +34,7 @@ All three fixes are in one pull request. The link is defined once, on the last l
 The assignment requires two fixes per student. I did this third one because the fix is small and it removes a stack trace from every bad request.
 
 - **Issue:** [#75](https://github.com/carissa-chen/hotel-package-tracker/issues/75) (DM-09)
-- **PR:** [david pull request][pr]
+- **PR:** [#89][pr]
 - **Test:** `tests/david-dm-09.test.js`
 - **Before:** ![before](screenshots/david_martindale_issue75_before.png)
 - **After:** ![after](screenshots/david_martindale_issue75_after.png)
@@ -51,7 +51,7 @@ The tests mock the package model, so the unfixed route returns 201 in the "befor
 
 ## Neighbors checked
 
-- The full suite passes with the fixes: 8 test files, 13 tests.
+- The full suite passes with the fixes: 8 test files, 13 tests. I ran it again on `main` after PR #89 merged, with the same result.
 - Against a real MongoDB, a valid POST still returns 201, padded values are still trimmed, a numeric tracking number is still accepted, and `GET /api/packages` and `/api/packages/search` still return the saved records.
 
 ## AI disclosure
@@ -61,4 +61,4 @@ The tests mock the package model, so the unfixed route returns 201 in the "befor
 - Claude drafted this file and my rows of the team report.
 - I ran each test before and after the fix on my machine, took the screenshots, reviewed the changes, and opened the pull request.
 
-[pr]: https://github.com/carissa-chen/hotel-package-tracker/pull/PR_NUMBER
+[pr]: https://github.com/carissa-chen/hotel-package-tracker/pull/89
