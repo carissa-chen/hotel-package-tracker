@@ -36,3 +36,4 @@ class PackageInfo {
 
 
 }
+module.exports = PackageInfo;
