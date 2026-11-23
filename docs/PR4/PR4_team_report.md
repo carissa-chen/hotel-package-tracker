@@ -16,12 +16,12 @@ One row per failing test. Owners and severity/priority are proposals until the t
 | travis-tt-02: PickupRecord stores signature data and pickup time | Missing feature | #83 | Medium | Medium | Travis | Open |
 | travis-tt-03: scanResult rejects empty scanned text | Missing feature | #84 | Medium  | Medium | Travis | Open |
 | travis-tt-04: Front desk staff can retrieve complete package information | Missing feature | #85 | Medium | Medium | Travis | Open |
-| DM-03: POST returns 500 instead of 400 when carrier is missing | TODO | #71 | TODO | TODO | David | Open |
-| DM-04: Whitespace-only trackingNumber returns 500 instead of 400 | TODO | #72 | TODO | TODO | David | Open |
-| DM-07: Duplicate tracking number is accepted and saved twice | TODO | #73 | TODO | TODO | David | Open |
-| DM-08: POST accepts requests with no staff credentials | TODO | #74 | TODO | TODO | David | Open |
-| DM-09: Malformed JSON returns an HTML stack trace | TODO | #75 | TODO | TODO | David | Open |
-| DM-10: No field to tell apart guests with the same name | TODO | #76 | TODO | TODO | David | Open |
+| DM-03: POST returns 500 instead of 400 when carrier is missing | Code bug | #71 | Medium | Medium | David | Fixed on `david`, PR pending |
+| DM-04: Whitespace-only trackingNumber returns 500 instead of 400 | Code bug | #72 | Medium | Medium | David | Fixed on `david`, PR pending |
+| DM-07: Duplicate tracking number is accepted and saved twice | Missing feature | #73 | Medium | Medium | David | Open |
+| DM-08: POST accepts requests with no staff credentials | Missing feature | #74 | High | Medium | David | Open |
+| DM-09: Malformed JSON returns an HTML stack trace | Code bug | #75 | Low | Low | David | Fixed on `david`, PR pending |
+| DM-10: No field to tell apart guests with the same name | Missing feature | #76 | Medium | Low | David | Open |
 
 **Bucket definitions used:** Code bug = the test is correct and the code is wrong. Test bug = the code is correct and the test is wrong. Missing feature = the original team never built it. The instructor confirmed that building a missing feature counts as a fix for the bug-fix requirement.
 
@@ -51,7 +51,7 @@ One row per failing test. Owners and severity/priority are proposals until the t
 
 ## 4. Feature Decision
 
-**TODO:** Choose one feature. Candidates from the missing-feature bucket: PickupRecord signature capture (#83), scanResult parsing (#84), or PackageInfo retrieval (#85).
+**TODO:** Choose one feature. Candidates from the missing-feature bucket: PickupRecord signature capture (#83), scanResult parsing (#84), PackageInfo retrieval (#85), a duplicate tracking number check (#73), staff login (#74), or a room number on the package record (#76).
 
 - **Feature name:** TODO
 - **User story:** As a ___, I want ___, so that ___.
