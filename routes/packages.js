@@ -48,11 +48,21 @@ router.get('/', async (req, res) => {
 // GET /api/packages/search - Search packages
 router.get('/search', async (req, res) => {
   try {
-    const query = req.query.q;
+    const query = String(req.query.q || '').trim();
+
+    // Validate the search term: it must be present and not blank
+    if (!query) {
+      return res.status(400).json({
+        error: 'Validation Error: a search term (q) is required.'
+      });
+    }
+
+    // Escape special characters so the term is matched as plain text
+    const pattern = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     const packages = await Package.find({
       $or: [
-        { trackingNumber: { $regex: query, $options: 'i' } },
-        { guestName: { $regex: query, $options: 'i' } }
+        { trackingNumber: { $regex: pattern, $options: 'i' } },
+        { guestName: { $regex: pattern, $options: 'i' } }
       ]
     });
     return res.status(200).json(packages);
