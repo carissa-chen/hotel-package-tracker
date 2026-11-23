@@ -136,6 +136,46 @@ npm test
 ```
 GitHub Actions also runs the tests on pushes and pull requests to `main`.
 
+## How to run the tests
+
+The tests need Node.js and nothing else. They do not use MongoDB, because each test either mocks the package model or tests a class directly.
+
+1. Install Node.js 22 or newer. Check with `node -v`.
+2. Clone the repository and open its folder:
+
+   ```bash
+   git clone https://github.com/carissa-chen/hotel-package-tracker.git
+   cd hotel-package-tracker
+   ```
+
+3. Install the dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Run every test:
+
+   ```bash
+   npm test
+   ```
+
+5. Read the summary at the bottom. Every file should show `PASS`, and the last lines should report 0 failed test suites and 0 failed tests.
+
+To run one test file, name it:
+
+```bash
+npx jest tests/david-dm-03.test.js
+```
+
+To run tests by name, give part of the name:
+
+```bash
+npx jest -t "DM-04"
+```
+
+All test files are in the `tests/` folder and end in `.test.js`. GitHub Actions runs `npm test` on every push and pull request to `main`.
+
 ## Project Status
 
 **Currently in development.**
