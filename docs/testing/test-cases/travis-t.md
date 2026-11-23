@@ -113,7 +113,7 @@ The "PackageInfo" object is created successfully, and its six fields contain the
 **From Part 6:** New
 **Written by:** Travis Trinidad
 **Title:** Front desk staff can retrieve complete package information
-**Traces to:** G-TT-01
+**Traces to:** G-TT-01; NFR-TT-01
 **Test type:** Acceptance
 **Preconditions:** The "src/PackageInfo.js" file is available, and the "PackageInfo" class can be imported into a test.
 **Test data:**

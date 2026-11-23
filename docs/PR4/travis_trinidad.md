@@ -43,3 +43,8 @@ The assignment requires two fixes per student. This third fix was optional, and 
 ## AI disclosure
 
 TODO: 
+
+- claude helped me understand what my issues we're and how they relate with other issues
+- when fixing the issues, claude guided me towards the direction in which while fixing the issues it wouldn't
+negativly impact other issues.
+- helped format both travis_trinidad.md file and the main PR4 file.     
