@@ -19,13 +19,18 @@ function Form() {
       body: JSON.stringify(packageData)
     });
 
-    const result = await response.json();
-    alert("Package logged successfully!");
-    console.log(result);
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || "The package could not be saved.");
+      }
+
+      alert("Package logged successfully!");
+      console.log(result);
 
     
     } catch (error) {
-      alert("Could not connect to the server.");
+      alert(`Could not save package: ${error.message}`);
       console.error(error);
     } 
   }
