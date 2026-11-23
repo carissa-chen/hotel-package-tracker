@@ -100,34 +100,33 @@ HOW TO USE THIS FILE
 
 **From Part 6:** New
 
-**Written by:** Matthew Rohrer
+**Written by:** David Martinsdale, for Matthew Rohrer's area
 
-**Title:**
+**Title:** GET api/packages/search returns 500 instead of 400 when query is missing
 
 **Traces to:**
 
-**Test type:**
+**Test type:** Negative
 
-**Preconditions:**
+**Preconditions:** Both front-end and back-end of the program are running
 
 **Test data:**
 
 **Steps:**
-1.
-2.
-3.
+1. Have MongoDB running
+2. Send GET http://127.0.0.1:5000/api/packages/search with no q parameter
 
-**Expected result:**
+**Expected result:** HTTP 400 with a JSON error message saying a search term is required
 
-**Actual result:**
+**Actual result:** HTTP 500 with {"error":"Server Error: Unable to search packages."}
 
-**Status:**
+**Status:** Fail
 
-**Severity:**
+**Severity:** Medium
 
-**V or V:**
+**V or V:** Verification
 
-**GitHub Issue:**
+**GitHub Issue:** #90
 
 ---
 
@@ -137,31 +136,32 @@ HOW TO USE THIS FILE
 
 **Written by:** Matthew Rohrer
 
-**Title:**
+**Title:** Search treats special characters as a pattern. "(" returns 500 and "1.5" matches the wrong package
 
 **Traces to:**
 
-**Test type:**
+**Test type:** Unit
 
-**Preconditions:**
+**Preconditions:** Have MongoB running with two packages with tracking numbers `1Z-125-XY` and `ABC1.5`
 
 **Test data:**
 
 **Steps:**
-1.
-2.
-3.
+1. Have MongoDB running
+2. Log two packages with tracking numbers `1Z-125-XY` and `ABC1.5`
+3. Send `GET http://127.0.0.1:5000/api/packages/search?q=(`
+4. Send `GET http://127.0.0.1:5000/api/packages/search?q=1.5`
 
-**Expected result:**
+**Expected result:** Search text is matched. Step 3 returns HTTP 200 with an empty list. Step 4 returns only `ABC 1.5`
 
-**Actual result:**
+**Actual result:** Step 3 returns HTTP 500 and `{"error":"Server Error: Unable to search packages."}`. Step 4 returns both packages because `.` matches any character. Searching for `.` alone brings up every package
 
-**Status:**
+**Status:** Fail
 
-**Severity:**
+**Severity:** Medium
 
-**V or V:**
+**V or V:** Verification
 
-**GitHub Issue:**
+**GitHub Issue:** #91
 
 ---
