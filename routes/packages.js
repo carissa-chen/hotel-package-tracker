@@ -7,10 +7,11 @@ router.post('/', async (req, res) => {
   try {
     const { trackingNumber, guestName, carrier } = req.body;
 
-    // Validate required fields
-    if (!trackingNumber || !guestName) {
+    // Validate required fields: each must be present and not blank
+    const isBlank = (value) => !value || String(value).trim() === '';
+    if (isBlank(trackingNumber) || isBlank(guestName) || isBlank(carrier)) {
       return res.status(400).json({
-        error: 'Validation Error: trackingNumber and guestName are required.'
+        error: 'Validation Error: trackingNumber, guestName, and carrier are required.'
       });
     }
 
