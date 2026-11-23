@@ -21,7 +21,7 @@ describe('MR-04: Search treats special characters as pattern', () => {
     })
 
     it('MR-04: "1.5" matches the wrong packages', async () => {
-        const res = await request(app).get('/api.packages/search?q=1.5')
+        const res = await request(app).get('/api/packages/search?q=1.5')
 
         expect(res.statusCode).toBe(200)
         expect(Package.find).toHaveBeenCalledTimes(1)
